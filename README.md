@@ -1,13 +1,14 @@
 # discord_proxy
+
 Exposes web services over Discord
 
 ## Development Setup
 
 Get the dependencies installed in a virtual environment:
 
-```
+```bash
 virtualenv -p python3 .venv
-. .venv/bin/activate
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -17,7 +18,7 @@ https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-
 
 Take that API key and export it into your development environment like so:
 
-```
+```bash
 export DISCORD_KEY='YOUR KEY HERE'
 ```
 
@@ -32,14 +33,14 @@ You can now run the project via several means:
 
 Create a new file in `worker/cmds` and define a function like so:
 
-```
+```js
 async def ping(ctx):
     await ctx.send('pong')
 ```
 
 Then define an export dictionary like so:
 
-```
+```js
 export = [{
     'name': 'ping',
     'function': ping,
