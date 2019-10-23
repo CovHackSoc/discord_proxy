@@ -1,0 +1,16 @@
+[
+    {
+        "name": "shibe",
+        "url": "http://shibe.online/api/shibes",
+        "type": "jq",
+        "meta": "{\"shibe\": .[0]}",
+        "format": "{shibe}"
+    },
+    {
+        "name": "cat",
+        "url": "https://api.thecatapi.com/v1/images/search",
+        "type": "jq",
+        "meta": "{url: .[0].url }",
+        "format": "{url}"
+    }
+]

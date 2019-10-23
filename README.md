@@ -52,3 +52,39 @@ it's export dictionary in the list!
 
 If you want your command to be usable by only people with the bot_admin group,
 just set admin to true.
+
+## Adding new API commands
+
+If you are just adding support for new commands that call an HTTP API that
+returns JSON, you have two options:
+
+* The jq interface for APIs you don't control. Doesn't currently support POST.
+* The standard interface if you can modify what the endpoint returns. POSTs details to the endpoint in a standard form.
+
+After you get your response, you can define how you would like it to be
+displayed with a python format string.
+
+We use `API_LIST_URL` to host the configuration for this.
+
+### JQ interface
+
+These uses [JQ](https://stedolan.github.io/jq/) to extract data from a response.
+
+### Standard interface
+
+## Security
+
+Commands loaded are mostly trusted, though it's probably worth checking how I
+load responses etc. I'm not sure how we format responses is safe.
+
+We're running this on private discords with users we trust, so consider that
+before using this.
+
+## Configuration
+
+You can find an example of the API config in `examples/config.json`
+
+An overview of the environment variables used:
+* DISCORD_KEY - Your discord bot API key
+* ADMIN_ROLE - Role to check if a user has before running privileged commands
+* API_LIST_URL - Where to fetch the API config from. In dev, I'm using JSONBin.
