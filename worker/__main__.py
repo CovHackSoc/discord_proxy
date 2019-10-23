@@ -1,11 +1,11 @@
 import os
-from discord.ext import commands
 
-bot = commands.Bot(command_prefix='!')
+from bot import DiscordProxy
 
-@bot.command()
-async def ping(ctx, *args):
-    await ctx.send('pong')
+from dotenv import load_dotenv
+load_dotenv()
+
 
 if __name__ == '__main__':
-    bot.run(os.environ['DISCORD_KEY'])
+    inst = DiscordProxy(os.environ['DISCORD_KEY'])
+    inst.start()
