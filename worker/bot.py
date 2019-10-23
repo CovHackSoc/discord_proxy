@@ -41,4 +41,5 @@ class DiscordProxy:
     def start(self):
         self._load_internal_commands()
         self._load_http_commands()
+        print("STARTED")
         self.bot.run(self.discord_key)
