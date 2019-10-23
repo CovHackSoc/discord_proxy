@@ -4,7 +4,7 @@ import requests
 import pyjq as jq
 
 def jq_proxy(url, jq_string):
-    def jq_handler(ctx):
+    def jq_handler(ctx, args):
         r = requests.get(url)
         return jq.all(jq_string, r.json())
 

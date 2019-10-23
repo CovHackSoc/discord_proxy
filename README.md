@@ -88,3 +88,4 @@ An overview of the environment variables used:
 * DISCORD_KEY - Your discord bot API key
 * ADMIN_ROLE - Role to check if a user has before running privileged commands
 * API_LIST_URL - Where to fetch the API config from. In dev, I'm using JSONBin.
+* DATABASE_URL - We have a Postgres instance running, so if you need a data store, there is one.

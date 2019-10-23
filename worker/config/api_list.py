@@ -8,8 +8,8 @@ from proxy.jq import jq_proxy
 from proxy.standard import standard_proxy
 
 def formatter(format_str, func):
-    async def formatter_handler(ctx):
-        data = func(ctx)
+    async def formatter_handler(ctx, *args):
+        data = func(ctx, args)
         for item in data:
             await ctx.send(format_str.format(**item))
     return formatter_handler
