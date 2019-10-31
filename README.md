@@ -33,14 +33,14 @@ You can now run the project via several means:
 
 Create a new file in `worker/cmds` and define a function like so:
 
-```python
+```python3
 async def ping(ctx):
     await ctx.send('pong')
 ```
 
 Then define an export dictionary like so:
 
-```python
+```python3
 export = [{
     'name': 'ping',
     'function': ping,
