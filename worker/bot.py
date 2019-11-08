@@ -21,6 +21,8 @@ class DiscordProxy:
 
     def _load_internal_commands(self):
         # add all of the predefined commands to the bot.
+        #vegf
+        #regbgbvefgrtv
         all_cmds = []
         for cmd in cmds.__all__:
             all_cmds += importlib.import_module('cmds.{}'.format(cmd)).export
